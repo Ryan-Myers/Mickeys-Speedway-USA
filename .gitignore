@@ -1,0 +1,68 @@
+# ignore all rom files
+baseroms/*
+*.z64
+*.n64
+*.v64
+
+#compiled or ripped asm
+asm/*
+asm
+asm_jpn
+asm_jpn/*
+asm_pal
+asm_pal/*
+build/*
+build/
+build_jpn/*
+build_jpn/
+build_pal/*
+build_pal/
+
+#binaries ripped from the ROMs
+assets/
+assets/*
+bin/
+bin/*
+
+#compiled object files
+*.slo
+*.lo
+*.o
+*.obj
+
+#Precompiled Headers
+*.gch
+*.pch
+
+#compiled dynamic libraries
+*.so
+*.dylib
+*.dll
+
+#static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+#misc
+__pycache__/
+*__pycache__/
+expected/
+.*/
+*.ld
+*/*.ld
+*.map
+*/*.map
+*auto.txt
+*_auto.*.txt
+*.*auto.txt
+*/.splat_cache
+.splat_cache
+.splat_cache*
+ctx.c
+ctx.c.m2c
+ctx_includes.c
+tools/n64crc
+!tools/build
+m2cfiles/
