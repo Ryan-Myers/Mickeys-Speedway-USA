@@ -17,7 +17,7 @@ python3 -m pip install --user colorama watchdog levenshtein cxxfilt
 python3 -m pip install --upgrade pycparser
 ```
 
-Drop in `us` as `baserom.us.z64` (sha1sum: `TODO`)
+Drop in `us` as `baserom.us.z64` (sha1sum: `507341c0a40ca3e9a7cee969b396ee53facfb548`)
 
 ```sh
 make dependencies
