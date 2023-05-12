@@ -35,7 +35,7 @@ segments:
     start: 0x1000
     vram: 0x80000400
     subsegments:
-      - [0x1000, hasm]
+      - [0x1000, hasm, entrypoint]
 
   - name: main
     type: code
@@ -203,7 +203,7 @@ segments:
       - [0x75E10, asm]
       - [0x75E20, asm]
       - [0x760C0, asm]
-      - [0x76B80, asm]      
+      - [0x76B80, asm]
       - [0x76D10, bin] # - [0x76D10, hasm] - This seems to call a func func_840010E0 which breaks things.
       - [0x76E60, data]
       - { start: 0x86640, type: bss, vram: 0x80085A40 }

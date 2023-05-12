@@ -1,0 +1,217 @@
+name: Mickey Usa Pal (European (basic spec.))
+sha1: c583ed998a6b422a22ffd3f8376c3cef0c3710d9
+options:
+  basename: mickey.pal
+  target_path: baserom.pal.z64
+  base_path: .
+  compiler: IDO
+  find_file_boundaries: True
+  header_encoding: ASCII
+  platform: n64
+  undefined_funcs_auto_path: undefined_funcs_auto.pal.txt
+  undefined_syms_auto_path: undefined_syms_auto.pal.txt
+  symbol_addrs_path: symbol_addrs.pal.txt
+  asm_path: asm_pal
+  src_path: src_pal
+  build_path: build_pal
+  #extensions_path: tools/splat_ext
+  #mips_abi_float_regs: o32
+  section_order: [".text", ".data", ".rodata", ".bss"]
+  auto_all_sections: [".data", ".rodata", ".bss"]
+  symbol_name_format: $VRAM_$ROM
+  #libultra_symbols: True
+  #hardware_regs: True
+segments:
+  - name: header
+    type: header
+    start: 0x0
+
+  - name: boot
+    type: bin
+    start: 0x40
+
+  - name: entry
+    type: code
+    start: 0x1000
+    vram: 0x80000400
+    subsegments:
+      - [0x1000, hasm, entrypoint]
+
+  - name: main
+    type: code
+    start: 0x1050
+    vram: 0x80000450
+    follows_vram: entry
+    bss_size: 0x52D20
+    subsegments:
+      - [0x1050, asm]
+      - [0x45F0, asm]
+      - [0x4F40, asm]
+      - [0x16220, asm]
+      - [0x190D0, asm]
+      - [0x1BF30, asm]
+      - [0x1C870, asm]
+      - [0x20160, asm]
+      - [0x21EE0, asm]
+      - [0x22020, asm]
+      - [0x25D90, asm]
+      - [0x278E0, asm]
+      - [0x2B7F0, asm]
+      - [0x2BE70, asm]
+      - [0x2CA60, asm]
+      - [0x2EE70, asm]
+      - [0x2F5D0, asm]
+      - [0x325B0, asm]
+      - [0x34170, asm]
+      - [0x350A0, asm]
+      - [0x37F90, asm]
+      - [0x3B6F0, asm]
+      - [0x3D2A0, asm]
+      - [0x3D860, asm]
+      - [0x436E0, asm]
+      - [0x459D0, asm]
+      - [0x46820, asm]
+      - [0x47CD0, asm]
+      - [0x47CE0, asm]
+      - [0x4BEB0, asm]
+      - [0x4ECD0, asm]
+      - [0x4F750, asm]
+      - [0x4FEA0, asm]
+      - [0x4FEB0, asm]
+      - [0x50950, asm]
+      - [0x50E80, asm]
+      - [0x587D0, asm]
+      - [0x58830, asm]
+      - [0x58ED0, asm]
+      - [0x59110, asm]
+      - [0x59E50, asm]
+      - [0x59EB0, asm]
+      - [0x5A070, asm]
+      - [0x5B5C0, asm]
+      - [0x5E970, asm]
+      - [0x5E9C0, asm]
+      - [0x61BE0, asm]
+      - [0x61C50, asm]
+      - [0x61C70, asm]
+      - [0x62690, asm]
+      - [0x62880, asm]
+      - [0x62930, asm]
+      - [0x629B0, asm]
+      - [0x63520, asm]
+      - [0x63730, asm]
+      - [0x641F0, asm]
+      - [0x642C0, asm]
+      - [0x643F0, asm]
+      - [0x64780, asm]
+      - [0x649C0, asm]
+      - [0x65B20, asm]
+      - [0x66990, asm]
+      - [0x66B80, asm]
+      - [0x66D10, asm]
+      - [0x66D30, asm]
+      - [0x66DC0, asm]
+      - [0x68470, asm]
+      - [0x69460, asm]
+      - [0x694E0, asm]
+      - [0x69500, asm]
+      - [0x69700, asm]
+      - [0x69BF0, asm]
+      - [0x69F60, asm]
+      - [0x6AAB0, asm]
+      - [0x6AED0, asm]
+      - [0x6AFB0, asm]
+      - [0x6B460, asm]
+      - [0x6BB20, asm]
+      - [0x6BEE0, asm]
+      - [0x6C0B0, asm]
+      - [0x6C230, asm]
+      - [0x6CA10, asm]
+      - [0x6CBB0, asm]
+      - [0x6CD80, asm]
+      - [0x6CF60, asm]
+      - [0x6D130, asm]
+      - [0x6D590, asm]
+      - [0x6DA10, asm]
+      - [0x6DC60, asm]
+      - [0x6DE90, asm]
+      - [0x6E0D0, asm]
+      - [0x6E150, asm]
+      - [0x6ECF0, asm]
+      - [0x6F6E0, asm]
+      - [0x6F820, asm]
+      - [0x6F9B0, asm]
+      - [0x6FC70, asm]
+      - [0x6FCF0, asm]
+      - [0x6FE40, asm]
+      - [0x6FE50, asm]
+      - [0x6FF20, asm]
+      - [0x70540, asm]
+      - [0x705B0, asm]
+      - [0x70970, asm]
+      - [0x70BD0, asm]
+      - [0x70C50, asm]
+      - [0x70CD0, asm]
+      - [0x70D00, asm]
+      - [0x70D90, asm]
+      - [0x70DA0, asm]
+      - [0x70DB0, asm]
+      - [0x70EF0, asm]
+      - [0x71030, asm]
+      - [0x716F0, asm]
+      - [0x717A0, asm]
+      - [0x717D0, asm]
+      - [0x71AE0, asm]
+      - [0x71B50, asm]
+      - [0x71C30, asm]
+      - [0x71F90, asm]
+      - [0x72140, asm]
+      - [0x72370, asm]
+      - [0x726D0, asm]
+      - [0x726E0, asm]
+      - [0x72AD0, asm]
+      - [0x72B10, asm]
+      - [0x72BE0, asm]
+      - [0x73310, asm]
+      - [0x73360, asm]
+      - [0x733B0, asm]
+      - [0x73400, asm]
+      - [0x734A0, asm]
+      - [0x73500, asm]
+      - [0x735E0, asm]
+      - [0x73700, asm]
+      - [0x73870, asm]
+      - [0x73A00, asm]
+      - [0x73B50, asm]
+      - [0x73C40, asm]
+      - [0x73DC0, asm]
+      - [0x73DE0, asm]
+      - [0x73E90, asm]
+      - [0x73EE0, asm]
+      - [0x73F40, asm]
+      - [0x73F50, asm]
+      - [0x74660, asm]
+      - [0x74B70, asm]
+      - [0x74B80, asm]
+      - [0x74EE0, asm]
+      - [0x74F20, asm]
+      - [0x74FB0, asm]
+      - [0x74FE0, asm]
+      - [0x74FF0, asm]
+      - [0x75020, asm]
+      - [0x75080, asm]
+      - [0x751E0, asm]
+      - [0x75390, asm]
+      - [0x753E0, asm]
+      - [0x760A0, asm]
+      - [0x760D0, asm]
+      - [0x760E0, asm]
+      - [0x76380, asm]
+      - [0x76E40, asm]
+      - [0x76FD0, bin] # - [0x76FD0, hasm] - This seems to call a func func_840010E0 which breaks things.
+      - [0x77120, data]
+      - { start: 0x86990, type: bss, vram: 0x80085D90 }
+
+  - type: bin
+    start: 0x86990
+    follows_vram: main
+  - [0x2000000]

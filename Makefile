@@ -165,8 +165,8 @@ extract: splat tools
 
 extractall: splat tools
 	$(PYTHON) $(SPLAT) $(BASENAME).us.yaml
-# $(PYTHON) $(SPLAT) $(BASENAME).pal.yaml
-# $(PYTHON) $(SPLAT) $(BASENAME).jpn.yaml
+	$(PYTHON) $(SPLAT) $(BASENAME).pal.yaml
+	$(PYTHON) $(SPLAT) $(BASENAME).jpn.yaml
 
 dependencies: tools
 	@make -C tools
@@ -177,16 +177,16 @@ clean:
 	
 cleanall:
 	rm -rf build
-# rm -rf build_pal
-# rm -rf build_jpn
+	rm -rf build_pal
+	rm -rf build_jpn
 
 
 distclean: clean
 	rm -rf $(ASM_DIRS)
 	rm -rf assets
 	rm -f *auto.us.txt
-# rm -f *auto.pal.txt
-# rm -f *auto.jpn.txt
+	rm -f *auto.pal.txt
+	rm -f *auto.jpn.txt
 	rm -f $(LD_SCRIPT)
 
 distcleanall: clean
